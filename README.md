@@ -1,5 +1,6 @@
 # Duka
 
+Dynamic subdomain implementation using elixir
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
@@ -17,3 +18,5 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+https://blog.gazler.com/blog/2015/07/18/subdomains-with-phoenix/
