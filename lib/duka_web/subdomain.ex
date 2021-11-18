@@ -8,11 +8,17 @@ defmodule DukaWeb.Subdomain do
   def call(conn, router) do
     case get_subdomain(conn.host) do
       subdomain when byte_size(subdomain) > 0 ->
+
         conn
+        |> put_private(:subdomain, subdomain)
         |> router.call(router.init({}))
+        |> halt
+
       _ -> conn
+
     end
   end
+
 
   defp get_subdomain(host) do
     root_host = DukaWeb.Endpoint.config(:url)[:host]

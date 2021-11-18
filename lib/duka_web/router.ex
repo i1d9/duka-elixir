@@ -14,10 +14,17 @@ defmodule DukaWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", DukaWeb do
+
+  scope "/duka", DukaWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", DukaController, :index
+  end
+
+  scope "/", DukaWeb.Subdomain do
+    pipe_through :browser
+
+    get "/", ProductController, :index
   end
 
   # Other scopes may use custom stacks.

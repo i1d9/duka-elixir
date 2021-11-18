@@ -1,4 +1,4 @@
-defmodule DukaWeb.PageController do
+defmodule DukaWeb.DukaController do
   use DukaWeb, :controller
 
   def index(conn, _params) do

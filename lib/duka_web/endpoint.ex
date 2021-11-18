@@ -46,5 +46,6 @@ defmodule DukaWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  plug DukaWeb.Subdomain, DukaWeb.SubdomainRouter
   plug DukaWeb.Router
 end
