@@ -26,6 +26,7 @@ defmodule Duka.Users.User do
 
   end
 
+
   def registration_changeset(user, params \\ %{}) do
     user
     |> changeset(params)
