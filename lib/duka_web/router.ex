@@ -15,17 +15,13 @@ defmodule DukaWeb.Router do
   end
 
 
-  scope "/duka", DukaWeb do
+  scope "/", DukaWeb do
     pipe_through :browser
 
     get "/", DukaController, :index
   end
 
-  scope "/", DukaWeb.Subdomain do
-    pipe_through :browser
-
-    get "/", ProductController, :index
-  end
+  
 
   # Other scopes may use custom stacks.
   # scope "/api", DukaWeb do

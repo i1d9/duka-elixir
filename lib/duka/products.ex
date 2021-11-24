@@ -13,11 +13,18 @@ defmodule Duka.Products do
     |> Repo.insert!()
   end
 
-  def delete_product do
-
+  def delete_product(%Product{} = product) do
+    Repo.delete!(product)
   end
 
-  def update_product do
-
+  def update_product(%Product{} = product, attrs) do
+    product
+    |> Product.changeset(attrs)
+    |> Repo.update!()
   end
+
+  def get_product(id) do
+    Repo.get(Product, id)
+  end
+  
 end

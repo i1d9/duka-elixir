@@ -3,6 +3,11 @@ defmodule Duka.Businesses do
   alias Duka.Repo
   alias Duka.Businesses.Business
 
+
+  def get_business_by_name(name) when is_binary(name) do
+    Repo.get_by(Business, name: name)
+  end
+
   def list_businesses do
     Repo.all(Business)
   end

@@ -17,6 +17,7 @@ defmodule DukaWeb.SubdomainRouter do
   scope "/", DukaWeb do
     pipe_through :browser
     get "/", Subdomain.ProductController, :index
+    get "/item/:id", Subdomain.ProductController, :detail
   end
 
 end
