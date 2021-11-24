@@ -1,6 +1,6 @@
 defmodule Duka.Businesses.Products.Product do
   use Ecto.Schema
-
+  import Ecto.Changeset
 
   schema "products" do
 
@@ -12,4 +12,12 @@ defmodule Duka.Businesses.Products.Product do
 
     timestamps()
   end
+
+  def changeset(product, params \\ %{}) do
+    product
+    |> cast(params, [:name, :category, :description, :price])
+    |> validate_required([:name, :category, :description, :price])
+    |> unique_constraint(:name)
+  end
+  
 end

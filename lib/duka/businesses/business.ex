@@ -21,6 +21,6 @@ defmodule Duka.Businesses.Business do
     |> validate_length(:description, min: 8)
     |> validate_exclusion(:name, ~w(admin superadmin duka home about contact careers phone blog login logout account business))
     |> unique_constraint(:name)
-
   end
+  
 end

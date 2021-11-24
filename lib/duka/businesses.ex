@@ -1,4 +1,4 @@
-defmodule Duka.Businesses.Businesses do
+defmodule Duka.Businesses do
 
   alias Duka.Repo
   alias Duka.Businesses.Business
@@ -20,9 +20,8 @@ defmodule Duka.Businesses.Businesses do
     |> Repo.insert!()
   end
 
-  def delete_business(id) do
-    business = Repo.get(Business, id)
-    Repo.delete(business)
+  def delete_business(%Business{} = business) do
+    Repo.delete!(business)
   end
 
 end
