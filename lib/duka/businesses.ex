@@ -7,6 +7,10 @@ defmodule Duka.Businesses do
     Repo.all(Business)
   end
 
+  def list_products(business) do
+    Repo.all Ecto.assoc(business, :products)
+  end
+
   def update_business(%Business{} = business, attrs) do
     business
     |> Business.changeset(attrs)

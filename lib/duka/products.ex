@@ -1,14 +1,10 @@
 defmodule Duka.Products do
 
+  alias Duka.Businesses.Business
   alias Duka.Businesses.Products.Product
   alias Duka.Repo
-  def list_products do
-    Repo.all(Product)
-  end
+  import Ecto.Query
 
-  def list_business_products() do
-    
-  end
 
   def create_product(business, attrs \\ %{}) do
     business
