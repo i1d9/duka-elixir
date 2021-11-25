@@ -15,7 +15,6 @@ defmodule DukaWeb.Subdomain.ProductController do
 
   def index(conn, _params) do
       text(conn, "Subdomain home page for #{conn.private[:subdomain]}")
-
   end
 
   def show(conn, %{"id" => id}) do
