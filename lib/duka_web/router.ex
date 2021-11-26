@@ -19,9 +19,27 @@ defmodule DukaWeb.Router do
     pipe_through :browser
 
     get "/", DukaController, :index
+
   end
 
-  
+  scope "/account", DukaWeb do
+    pipe_through :browser
+
+    get "/register", UserController, :new
+    post "/register", UserController, :create
+    get "/login", UserController, :login
+    post "/login", UserController, :sign_in
+    get "/logout", UserController, :delete
+
+  end
+
+  scope "/test", DukaWeb do
+    pipe_through :browser
+
+    live "/", BusinessLive.New
+  end
+
+
 
   # Other scopes may use custom stacks.
   # scope "/api", DukaWeb do

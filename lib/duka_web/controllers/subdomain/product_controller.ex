@@ -9,7 +9,7 @@ defmodule DukaWeb.Subdomain.ProductController do
       conn
       |> assign(:business, business)
     else
-        redirect(conn, external: Routes.duka_url(conn, :index))
+      redirect(conn, external: Routes.duka_url(conn, :index))
     end
   end
 
