@@ -8,6 +8,7 @@ defmodule DukaWeb.Router do
     plug :put_root_layout, {DukaWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug DukaWeb.Auth
   end
 
   pipeline :api do
@@ -34,7 +35,7 @@ defmodule DukaWeb.Router do
   end
 
   scope "/test", DukaWeb do
-    pipe_through :browser
+    pipe_through [:browser, :authenticate_user]
 
     live "/", BusinessLive.New
   end
@@ -74,3 +75,5 @@ defmodule DukaWeb.Router do
     end
   end
 end
+#test1@test1.com
+#254712386596

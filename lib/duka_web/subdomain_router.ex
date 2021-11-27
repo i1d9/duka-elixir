@@ -8,6 +8,7 @@ defmodule DukaWeb.SubdomainRouter do
     plug :put_root_layout, {DukaWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug DukaWeb.Auth
   end
 
   pipeline :api do

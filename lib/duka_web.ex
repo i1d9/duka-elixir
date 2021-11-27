@@ -24,6 +24,7 @@ defmodule DukaWeb do
       import Plug.Conn
       import DukaWeb.Gettext
       alias DukaWeb.Router.Helpers, as: Routes
+      alias Duka.Users.User
     end
   end
 
@@ -65,6 +66,9 @@ defmodule DukaWeb do
 
       import Plug.Conn
       import Phoenix.Controller
+      import DukaWeb.Auth, only: [authenticate_user: 2]
+      alias DukaWeb.Router.Helpers, as: Routes
+
       import Phoenix.LiveView.Router
     end
   end

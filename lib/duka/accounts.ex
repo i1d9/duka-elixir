@@ -36,7 +36,8 @@ defmodule Duka.Accounts do
 
     %User{}
     |> User.registration_changeset(attrs)
-    |> Repo.insert!()
+    |> Repo.insert()
+
 
   end
 end

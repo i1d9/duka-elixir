@@ -14,17 +14,21 @@ alias Duka.Users
 alias Duka.Users.User
 alias Duka.Repo
 
-def create_user do
-  user_one = %{first_name: "i1d9", second_name: "i1d9", email: "email@email.com", phone: "+254712345678", password: "email@email.com", password_confirmation: "email@email.com"}
-  user_changeset = User.registration_changeset(%User{}, user_one)
-  user_one = Repo.insert!(user_changeset)
+user_one = %{first_name: "i1d9", second_name: "i1d9", email: "email@email.com", phone: "+254712345678", password: "email@email.com", password_confirmation: "email@email.com"}
+user_changeset = User.registration_changeset(%User{}, user_one)
+#user_one = Repo.insert!(user_changeset)
+
+case Duka.Accounts.register_user(user_one) do
+  {:ok, %Users.User{} = user_one} ->
+    user_one
+    IO.inspect()
+  {:error, user_changeset} ->
+    user_changeset
 end
-#Repo.insert!(user_changeset) do
-#  {:ok, user_one} ->
-#    user_one
-#  {:error, user_changeset} ->
-#    user_changeset
-#end
+
+
+"""
+
 
 def create_business(user) do
   business_params = %{name: "flesdjkdsjka", description: "all in one shop for everything", category: "lmao"}
@@ -47,7 +51,7 @@ business = Repo.get!(Business, 2)
 def create_products(business) do
   for i <- 1..10 do
     product_detail = %{
-    name: "Product #{i}",
+    name: "Product #i}",
     description: "Bitstring generators are also supported and are very useful when you need to comprehend over bitstring streams. The example below receives a list of pixels from a binary with their respective red, green and blue values and converts them into tuples of three elements each",
     category: "shoes",
     price: 5
@@ -61,7 +65,7 @@ end
 
 for i <- 1..10 do
   product_detail = %{
-  name: "Product #{i}",
+  name: "Product #i}",
   description: "Bitstring generators are also sup",
   category: "shoes",
   price: 5
@@ -79,3 +83,5 @@ product_detail = %{
   category: "shoes",
   price: 5
   }
+
+"""
