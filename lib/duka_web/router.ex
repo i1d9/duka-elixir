@@ -37,7 +37,12 @@ defmodule DukaWeb.Router do
   scope "/test", DukaWeb do
     pipe_through [:browser, :authenticate_user]
 
-    live "/", BusinessLive.New
+    live "/", BusinessLive.Dashboard, :index
+    live "/business/new", BusinessLive.Dashboard, :new
+    live "/business/update", BusinessLive.Dashboard, :edit
+
+    live "/new", BusinessLive.New
+
   end
 
 

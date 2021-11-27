@@ -1,0 +1,15 @@
+
+
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal DukaWeb.BusinessLive.FormComponent,
+    id: :new,
+    title: @page_title,
+    action: @live_action,
+    return_to: Routes.business_dashboard_path(@socket, :index) %>
+<% end %>
+
+<%= live_component @socket, DukaWeb.BusinessLive.FormComponent, id: "sd" %>
+
+
+<span><%= live_patch "New Product", to: Routes.business_dashboard_path(@socket, :new) %></span>
