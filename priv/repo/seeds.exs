@@ -16,16 +16,16 @@ alias Duka.Repo
 
 user_one = %{first_name: "i1d9", second_name: "i1d9", email: "email@email.com", phone: "+254712345678", password: "email@email.com", password_confirmation: "email@email.com"}
 user_changeset = User.registration_changeset(%User{}, user_one)
-#user_one = Repo.insert!(user_changeset)
 
 case Duka.Accounts.register_user(user_one) do
-  {:ok, %Users.User{} = user_one} ->
+  {:ok, user} ->
     user_one
-    IO.inspect()
+    IO.inspect(user_one)
   {:error, user_changeset} ->
     user_changeset
 end
 
+business_params = %{name: "flesdjkdsjka", description: "all in one shop for everything", category: "lmao", user_id: 1}
 
 """
 

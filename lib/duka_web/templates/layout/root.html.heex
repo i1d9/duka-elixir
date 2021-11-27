@@ -32,11 +32,7 @@
         Blog
       </a>
       
-                          <%=  @current_user %>
-
           <%= if @current_user do %>
-                    <%= link @current_user.first_name,
-to: Routes.user_path(@conn, :delete), class: "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" %>
 
           <%= link "Log out",
 to: Routes.user_path(@conn, :delete), class: "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" %>
